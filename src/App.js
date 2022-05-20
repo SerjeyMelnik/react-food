@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AppContext, ContextProvider } from "./context";
+import Header from "./components/Header";
+import Category from "./pages/Category";
+import FoodRecipe from "./pages/FoodRecipe";
+
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import WishListPage from "./pages/WishListPage";
+
 
 function App() {
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ContextProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/category/:categoryName" element={<Category />} />
+            <Route path="category/:categoryName/recipe/:recipeID" element={<FoodRecipe />} />
+            <Route path="/wishlist" element={<WishListPage />} />
+          </Routes>
+        </BrowserRouter>
+        <Footer />
+      </ContextProvider>
     </div>
   );
 }

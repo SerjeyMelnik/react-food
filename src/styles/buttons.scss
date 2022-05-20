@@ -1,0 +1,85 @@
+@import '/src/styles/colors';
+@import '/src/styles/fonts';
+
+
+.button{
+	padding: 7px 15px;
+	border-radius: 22px;
+	outline:none;
+	cursor: pointer;
+	&.second-btn{
+		border: 1px solid $gold;
+		background: transparent;
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		@include buttonsFont($gold);
+		transition: 0.5s;
+		animation-timing-function: ease-in-out;
+		position: relative;
+		&:hover{
+			color: $black-blue;
+			background: $gold;
+			box-shadow: 0px 0px 20px $gold-40;
+		}
+		.button-text{
+			
+		}
+		.liked_numb{
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			font-size: 15px;
+			bottom: 7px;
+			left: 33px;
+		}
+	}
+	&.main-btn{
+		background-color: $gold;
+		border: 1px solid $gold;
+		display: flex;
+		align-items: center;
+		transition: 0.5s;
+		.button-text{
+			@include buttonsFont($black-blue);
+		}
+		&:hover{
+			box-shadow: 0px 0px 20px $gold-40;
+		}
+		&.active{
+			background-color: $dark-gold;
+			box-shadow: 0px 0px  0 3px  $gold-40,
+						0px 0px  20px  $gold-40;
+		
+		}
+	}
+	&.search-btn{
+	
+		border-radius: 50px;
+		transition: width 0.5s,background 0.1s;
+		transform-origin:right;
+		background: $gold;
+		border: none;
+		overflow: hidden;
+		display: block;
+		@include buttonsFont($black-blue);
+		
+		&:active{
+			background-color: $dark-gold;
+		}
+		.inner-btn{
+			display: flex;
+			gap: 10px;
+			align-items: center;	
+			justify-content: flex-end;
+			i{
+				opacity: 0;
+				transition: 0.5s
+			}
+		}
+		
+		
+		
+	}
+
+}

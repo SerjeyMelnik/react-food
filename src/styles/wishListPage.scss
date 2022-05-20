@@ -1,0 +1,12 @@
+.wish_list_page{
+	padding: 20px 50px;
+}
+.wish_list_item{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	img{
+		height: 200px;
+	}
+}

@@ -1,0 +1,24 @@
+table{
+	border-collapse: collapse;
+	margin: 20px auto;
+	td{
+		border: 1px solid black;
+		padding: 10px;
+	}
+}
+.recipe{
+	width: 80%;
+	&_wrapper{	
+		display: flex;
+	}
+}
+//recipe_of_the_day
+
+.recipe_of_the_day{
+	color: white;
+}
+//cart 
+
+.recipe_cart{
+	color: white;
+}
