@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       <ContextProvider>
-        <BrowserRouter>
+        <BrowserRouter basename="/react-food">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
