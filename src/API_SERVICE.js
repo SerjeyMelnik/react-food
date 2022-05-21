@@ -26,5 +26,8 @@ export default class ServiceAPI {
         const response = await fetch(API_URL + 'lookup.php?i=' + id);
         return response.json();
     }
-
+    static async getRecipesByCoutry(country) {
+        const response = await fetch(API_URL + 'filter.php?a=' + country);
+        return response.json();
+    }
 }

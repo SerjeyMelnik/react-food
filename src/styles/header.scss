@@ -2,6 +2,18 @@
 @import '/src/styles/fonts';
 @import '/src/styles/variables';
 
+h1.logo{
+	margin: 0;
+	a{
+		font-family: $lora;
+		font-weight: 600;
+		font-size: 40px;
+		line-height: 51px;
+		color: $gold;
+		text-decoration: none;
+	}
+	
+}
 header{
 	background-color: transparent;
 	position: fixed;
@@ -17,18 +29,7 @@ header{
 		background-color: rgba($black-blue,0.9);
 		
 	}
-	h1.logo{
-		margin: 0;
-		a{
-			font-family: $lora;
-			font-weight: 600;
-			font-size: 40px;
-			line-height: 51px;
-			color: $gold;
-			text-decoration: none;
-		}
-		
-	}
+	
 	
 	.burger{
 		display: flex;

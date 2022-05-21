@@ -19,7 +19,7 @@ const ListOfMealsInCategory = ({meals}) => {
 						</p>
 						<i className="material-icons like" onClick={()=>{addToWishList(item)}}>
 							{
-							wishList.filter(meal => item.idMeal === meal.idMeal).length
+							wishList.filter(meal => item.idMeal === meal.idMeal).length 
 							?
 							'favorite'
 							:

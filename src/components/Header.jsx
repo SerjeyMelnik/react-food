@@ -24,7 +24,7 @@ const Header = () => {
 			setAllRecipes(data)
 		)
 	}
-
+	
 	useEffect(()=>{
 		init()
 	},[])

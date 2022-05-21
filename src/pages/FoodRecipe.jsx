@@ -22,7 +22,7 @@ const Foodrecipe = () => {
 
 	return (
 		<div className="recipe_wrapper">
-			<SideBar/>
+			{/* <SideBar/> */}
 		<div className='recipe' style={{textAlign:"center"}}>
 			<img src={recipe.strMealThumb} alt="" width='500px'/>
 			<h1>{recipe.strMeal} 

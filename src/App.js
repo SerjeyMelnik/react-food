@@ -24,8 +24,9 @@ function App() {
             <Route path="category/:categoryName/recipe/:recipeID" element={<FoodRecipe />} />
             <Route path="/wishlist" element={<WishListPage />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
-        <Footer />
+
       </ContextProvider>
     </div>
   );

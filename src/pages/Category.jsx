@@ -23,7 +23,7 @@ const Category = () => {
 	const {addToWishList,wishList} = useContext(AppContext)
 	return ( 
 		<div className="category_page_wrapper">
-			<SideBar/>
+			{/* <SideBar/> */}
 		<div className="category_page">
 			
 			<CategoryFilter meals={meals} 

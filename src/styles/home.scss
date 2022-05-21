@@ -111,3 +111,54 @@ h2.title{
 .home_page{
 	padding: 0 $page-padding;
 }
+//coutries
+.countries_flags{
+	
+	color: white;
+	margin-bottom: 60px;
+	.country{
+		padding: 10px;
+		box-sizing: border-box;
+		background: $dark-blue;
+		border-radius: 10px;
+		margin: 5px 10px;
+		cursor: pointer;
+		display: flex!important;
+		width: auto!important;
+		flex-direction: column;
+		&:hover{
+			border: 1px solid $gold-40;
+		}
+		&.current{
+			border: 1px solid $gold;
+			p{
+				color: $gold;
+			}
+		}
+	
+		&_img-wrapper{
+			box-shadow: 0 0  10px 2px $black-blue,
+						inset 0 0 10px 5px $black-blue;
+		}
+		p{
+			font-family: $Mulish;
+			font-style: normal;
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 120%;
+			color: #FBFFF9;
+			margin: 10px 0 0 0;
+			
+			text-align: center;
+		}
+		img{
+			width: 100%;
+		}
+	}
+}
+
+.recipes_by_coutries{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(calc(25% - 30px), 1fr));
+	gap: 30px;
+}
