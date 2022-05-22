@@ -53,10 +53,14 @@ table{
 		line-height: 110%;
 		color: $gold;
 		margin-top: 0;
+		&-wrapper{
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
 	}
 	&-description{
 		flex-grow: 1;
-		
 		font-family: $Mulish;
 		font-style: normal;
 		font-weight: 400;
@@ -69,6 +73,12 @@ table{
 		align-items: center;
 		gap: 20px;
 	}
+	&-flag{
+		display: block;
+		width: 50px;
+		box-shadow: 0 0 10px 2px $black-blue, 
+					inset 0 0 10px 5px $black-blue;
+	}
 }
 
 
@@ -77,8 +87,15 @@ table{
 	background: $dark-blue;
 	border-radius: 10px;
 	transition: 0.3s;
+	display: flex;
+    flex-direction: column;
 	&:hover{
 		border: 1px solid $gold;
+	}
+	&-bottom{
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
 	}
 	&-title{
 		font-family: $Mulish;
@@ -88,6 +105,7 @@ table{
 		line-height: 110%;
 		color: $gold;
 		margin: 20px 20px 30px 20px;
+		flex-grow: 1;
 	}
 	&-buttons{
 		display: flex;

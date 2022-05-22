@@ -50,7 +50,8 @@
 						color: white;
 					}
 					
-					background-color: rgba(white,0.2);
+					background-color: rgba($dark-blue,0.7);
+
 				}
 			}
 			input{
@@ -74,8 +75,8 @@
 					
 				}
 				&:focus{
-					background-color: rgba(white,0.5);
-					color: $gold;
+					background-color: rgba($dark-blue,0.7);
+					color: $dark-gold;
 					&::placeholder{
 						
 						color: white;
@@ -94,7 +95,73 @@
 				}
 			}
 		}
-	}
+		&_result{
+			background: rgba($dark-blue, 0.7);
+			border: 1px solid $gold;
+			backdrop-filter: blur(5px);
+			border-radius: 25px;
+			margin-top: 10px;
+			max-height: 150px;
+			overflow: auto;
+			&::-webkit-scrollbar{
+				width: 5px;
+			}
+			&::-webkit-scrollbar-track{
+				margin: 20px;
+			}
+			&::-webkit-scrollbar-thumb{
+				background: white;
+				border-radius: 2px;
+				margin: 5px;
+			}
+			.notFound{
+				margin: 0;
+				padding: 15px 20px;
+				font-family: $Mulish;
+						font-style: normal;
+						font-weight: 400;
+						font-size: 18px;
+						line-height: 23px;
+						color: $gold-40;
+			}
+			ul{
+				padding: 10px 25px;
+				margin: 0;
+				li{
+					list-style-type: none;
+					padding: 5px 0;
+					transition: 0.3s;
+					position: relative;
+					i{
+						position: absolute;
+						left: -10px;
+						color: $gold;
+						opacity: 0;
+						transition: 0.3s;
+					}
+					&:hover{
+						padding: 5px 0 5px 20px;
+						a{
+							color: $gold;
+						}
+						i{
+							opacity: 1;
+						}
+					}
+					a{
+						font-family: $Mulish;
+						font-style: normal;
+						font-weight: 400;
+						font-size: 18px;
+						line-height: 23px;
+						color: #FBFFF9;
+						text-decoration: none;
+						transition: 0.2s;
+					}
+				}
+			}
+		}
+		}
 }
 
 
@@ -116,6 +183,7 @@ h2.title{
 	
 	color: white;
 	margin-bottom: 60px;
+	padding: 0 20px;
 	.country{
 		padding: 10px;
 		box-sizing: border-box;
@@ -161,4 +229,45 @@ h2.title{
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(calc(25% - 30px), 1fr));
 	gap: 30px;
+}
+
+.show-more{
+		font-family: $Mulish;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 120%;
+		color: $gold-40;
+		text-decoration: none;
+		transition: 0.3s;
+		position: relative;
+		width: fit-content;
+		margin: 15px auto;
+		cursor: pointer;
+		&:hover{
+			color: $gold;
+			&::after,&::before{
+				background-color: $gold;
+			}
+		}
+
+		&::after,&::before{
+			content: '';
+			width: 10px;
+			height: 2px;
+			border-radius: 4px;
+			background-color: $gold-40;
+			position: absolute;
+			top: 50%;
+			transition: 0.3s;
+			
+		}
+		&::after{
+		right: -20px;
+		transform: rotate(-45deg);
+		}
+		&::before{
+			right: -15px;
+			transform: rotate(45deg);
+		}
 }

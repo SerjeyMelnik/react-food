@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AppContext } from '../context';
 
 const BannerSearch = () => {
@@ -7,6 +8,18 @@ const BannerSearch = () => {
 	const searchRecipe = (e) => {
 		const query = e.target.value;
 		setSearchQuery(query);
+	}
+	const filteredRecipes = () => {
+		return allRecipes.filter(recipe => 
+			recipe.strMeal.toLowerCase().includes(searchQuery.toLowerCase())
+			).map(recipe => 
+				<li key={recipe.idMeal}>
+					<i className="material-icons">search</i>
+					<Link to={`category/${recipe.strCategory}/recipe/${recipe.idMeal}`}>
+						{recipe.strMeal}
+					</Link>
+				</li>
+				);
 	}
 	return ( 
 		<div className="banner_search">
@@ -24,9 +37,25 @@ const BannerSearch = () => {
 						/>
 				
 			</div>
-			<div className="banner_search_result">
-
-			</div>
+		
+				{
+					searchQuery.length  
+					?
+					<div className="banner_search_result">
+						{
+							filteredRecipes().length ?
+							<ul>
+								{ filteredRecipes() }
+							</ul>
+							 :
+							<p className='notFound'>Not found</p>
+						}
+						
+					</div>
+					:
+					null
+				}
+			
 		</div>
 	 );
 }

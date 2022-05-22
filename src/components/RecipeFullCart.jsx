@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ServiceAPI from '../API_SERVICE';
+import { getCountryByName } from '../utils/Country';
 import LikeButton from './LikeButton';
 import OpenButton from './OpenButton';
 
@@ -52,14 +53,24 @@ const RecipeFullCart = ({idMeal}) => {
 							<img src={recipe.strMealThumb}  />
 						</div>
 						 <div className="recipe_full_cart-content">
-							 <h2 className="recipe_full_cart-title">
-								{recipe.strMeal}
-							 </h2>
+							<div className="recipe_full_cart-title-wrapper">
+								<h2 className="recipe_full_cart-title">
+									{recipe.strMeal}
+								</h2>
+								{
+									getCountryByName(recipe.strArea) ?
+									<img src={getCountryByName(recipe.strArea).flag}
+										className="recipe_full_cart-flag"/> :
+									 null
+								}
+							</div>
+							
+
 							 <div className="recipe_full_cart-description">
 								 {
 									recipe.strInstructions 
 									?	
-									//getDescription()
+								
 									recipe.strInstructions.slice(0,700) + '...'
 									:
 									null

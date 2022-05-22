@@ -7,10 +7,15 @@ import "slick-carousel/slick/slick-theme.css";
 import ServiceAPI from '../API_SERVICE';
 import {  getAllCountries, getCountryByName } from '../utils/Country';
 import RecipeCart from './RecipeCart';
+import LoaderSpiner from './loader-spiner/LoaderSpiner';
 
 const RecipesByCountries = () => {
 	const [recipes, setRecipes] = useState([]);
 	const [country,setCountry] = useState('American');
+	const [showMore,setShowMore] = useState(false);
+	const [loadShowMore,setLoadShowMore] = useState(false);
+
+	const recipesToShow = 4;
 	const countriesSliderSettings = {
 		slidesToShow: 12,
 		infinite:false
@@ -18,7 +23,16 @@ const RecipesByCountries = () => {
 	}
 	const selectCoutry = (country) => {
 		setCountry(country);
+		setShowMore(false);
 
+	}
+	const showMoreFun = () => {
+		setLoadShowMore(true)
+		const timeOut = setTimeout(()=>{
+			setShowMore(true);
+			setLoadShowMore(false)
+
+		},1000);
 	}
 	useEffect(()=>{
 		ServiceAPI.getRecipesByCoutry(country).then(data => setRecipes(data.meals))
@@ -51,13 +65,35 @@ const RecipesByCountries = () => {
 					{
 						recipes.length 
 						?
-						recipes.map(item => 
-							<RecipeCart key={item.idMeal} {...item}/>
-						)
+							recipes.length > recipesToShow && !showMore ?
+							recipes.map((item,indx) =>
+								{
+								return indx < recipesToShow ?
+								<RecipeCart key={item.idMeal} {...item}/> :
+								null
+								} 
+							)
+							:
+							recipes.map(item =>
+								<RecipeCart key={item.idMeal} {...item}/>
+							)
 						:
 						null
 					}
 				</div>
+				{
+					recipes.length > recipesToShow && !showMore?
+					<div className='show-more' onClick={()=>{showMoreFun()}}>
+						Show more recipes 
+						{
+							loadShowMore ?
+							<LoaderSpiner /> :
+							null
+						}
+					</div>
+					:
+					null
+				}
 			</div>
 		</div>
 	 );

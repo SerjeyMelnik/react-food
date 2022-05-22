@@ -46,5 +46,9 @@ footer{
 		line-height: 120%;
 		color: $gold-40;
 		text-decoration: none;
+		transition: 0.3s;
+		&:hover{
+			color: $gold;
+		}
 	}
 }
