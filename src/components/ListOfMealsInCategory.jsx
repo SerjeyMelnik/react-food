@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../context';
+import RecipeCart from './RecipeCart';
 
 const ListOfMealsInCategory = ({meals}) => {
 	const {addToWishList,wishList} = useContext(AppContext);
@@ -10,25 +11,10 @@ const ListOfMealsInCategory = ({meals}) => {
 		{
 			meals.length ?
 			meals.map((item) => {
-			return <div key={item.idMeal} className="category_page_meal">
-					<div className="category_page_meal-img_wrapper">
-						<img src={item.strMealThumb} alt={item.strMeal} className='category_page_meal-img' />
-					</div>
-					<p className="category_page_meal-name">
-						<Link to={`recipe/${item.idMeal}`}>{item.strMeal}</Link>
-						</p>
-						<i className="material-icons like" onClick={()=>{addToWishList(item)}}>
-							{
-							wishList.filter(meal => item.idMeal === meal.idMeal).length 
-							?
-							'favorite'
-							:
-							'favorite_border'
-							}
-							</i>
-				</div>
-			}) :
-			'not'
+			return <RecipeCart key={item.idMeal} {...item}/>
+			 })
+			  :
+			null
 			}
 	</div> );
 }

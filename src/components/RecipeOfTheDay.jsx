@@ -7,7 +7,7 @@ const RecipeOfTheDay = () => {
 	const recipeOfDay = {...allRecipes[Math.round(allRecipes.length / new Date().getDate())]};
 	
 	return ( 
-		<div className="recipe_of_the_day">
+		<div className="recipe_of_the_day" id='recipe_of_the_day'>
 			
 			<h2 className='title'>Today we recommend cooking this dish</h2>
 			{

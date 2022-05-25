@@ -5,7 +5,7 @@ import { AppContext } from '../context';
 import CategoriesBurger from './CategoriesBurger';
 
 const Header = () => {
-	const {setALLCategories,setAllRecipes} = useContext(AppContext);
+	const {setALLCategories,setAllRecipes,wishList} = useContext(AppContext);
 	
 	const navigateTo = useNavigate();
 	const [scrolled,setScrolled] = useState(false);
@@ -21,7 +21,11 @@ const Header = () => {
 			}
 		)
 		ServiceAPI.getALLRecipes().then(data =>
+			{	
+				
 			setAllRecipes(data)
+
+			}
 		)
 	}
 	
@@ -39,8 +43,8 @@ const Header = () => {
 	return ( 
 	<header className={scrolled ? 'scrolled' : ''}>
 		<button className='button second-btn' onClick={()=>{navigateTo('/wishlist')}}>
-					<i className="material-icons " >favorite_border</i> 
-					{/* <span className='liked_numb'>{wishList.length}</span> */}
+					<i className="material-icons ">favorite_border</i> 
+					<span className='liked_numb'>{wishList.length}</span>
 					<span className='button-text'>Favorite</span>
 		</button>
 		<h1 className='logo'><Link to='/'>ReceiptChef</Link></h1>

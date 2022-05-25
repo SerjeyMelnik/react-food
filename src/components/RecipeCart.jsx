@@ -16,7 +16,12 @@ const RecipeCart = ({idMeal}) => {
 				<div className="recipe_cart">
 					<div className="recipe_cart_img-wrapper">
 						<div className="recipe_cart-flag-wrapper">
-							<img src={getCountryByName(recipe.strArea).flag} className='recipe_cart-flag' />
+							{
+								getCountryByName(recipe.strArea) ?
+								<img src={getCountryByName(recipe.strArea).flag} className='recipe_cart-flag' /> :
+								null
+
+							}
 						</div>
 						<img src={recipe.strMealThumb} className="recipe_cart_img" />
 					</div>

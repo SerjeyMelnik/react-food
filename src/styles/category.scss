@@ -1,6 +1,11 @@
+
+@import '/src/styles/colors';
+@import '/src/styles/fonts';
+@import '/src/styles/variables';
+
+
 .category{
 	&_list{
-		
 		margin:  30px 50px;
 		.slick-arrow{
 			height: 100%;
@@ -84,24 +89,45 @@
 	}
 	&_page{
 
-		width: 60%;
 		
-		margin:  15px auto;
 		.list_of_meals{
 			display: grid;
 			grid-template-columns: repeat(auto-fill,minmax(calc(25% - 20px),1fr));
 			gap: 20px;
 		}
 		&_wrapper{
-			display: flex;
+		
+			margin: 95px $page-padding;
 		}
-		&_meal{
-			&-img{
-				width: 100%;
-				&_wrapper{
-
-				}
-			}
+		
+	}
+	&_banner{
+		display: flex;
+		background: $dark-blue;
+		border-radius: 10px;
+		padding: 30px;
+		&-content{
+			display: flex;
+			flex-direction: column;
+			padding: 0px 50px;
+		}
+		&-title{
+			font-family: $Merriweather;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 40px;
+		line-height: 110%;
+		color: $gold;
+		margin-top: 0;
+		}
+		&-description{
+			flex-grow: 1;
+			font-family: $Mulish;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 120%;
+			color: $gold;
 		}
 	}
 }

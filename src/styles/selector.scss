@@ -1,0 +1,159 @@
+
+@import '/src/styles/colors';
+@import '/src/styles/fonts';
+@import '/src/styles/variables';
+
+.select{
+	width: 200px;
+	position: relative;
+	
+	
+	.selected_value{
+		position: relative;
+		cursor:default;
+		transition: border-radius 0.5s;
+		img{
+			margin-right: 5px;
+		}
+		&.active{
+			&::after{
+		
+				transform: rotate(45deg);
+			}
+			&::before{
+				transform: rotate(-45deg);
+				
+			}
+			&:hover{
+				&::after,&::before{
+					top: 40%;
+				}
+			}
+		}
+		&:hover{
+			&::after,&::before{
+				top: 60%;
+			}
+		}	
+		&::after,&::before{
+			content: "";
+			display: block;
+			width: 10px;
+			height: 2px;
+			background-color:  $dark-gold;
+			border-radius: 3px;
+			position: absolute;
+			top: 50%;
+			transition: 0.3s;
+		}
+		&::after{
+			right: 15px;
+			transform: rotate(-45deg);
+		}
+		&::before{
+			transform: rotate(45deg);
+			right: 21px;
+		}
+	}
+	ul{
+		padding-left: 0;
+	}
+	li{
+		list-style-type: none;
+		color: $gold-40;
+		padding: 5px;
+		text-align: center;
+	
+		cursor: pointer;
+		&:first-child{
+			color: $gold-40;
+		}
+		&:hover{
+	
+		}
+	}
+}
+
+.selected_value{
+
+margin: 0;
+background: $black-blue;
+border: 1px solid $dark-blue;
+border-radius: 50px;
+
+padding: 5px 20px 5px 15px;
+position: relative;
+z-index: 100;
+p{
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	img{
+		width: 20px;
+	}
+}
+}
+.drop_down_box{
+max-height: 0px;
+overflow: hidden;
+background: rgba($black-blue, 0.8);
+backdrop-filter: blur(5px);
+border-radius: 0px 0px 10px 10px;
+border-bottom: none;
+border-top: none;
+width: 100%;
+box-sizing: border-box;
+transition: 0.5s;
+position: absolute;
+z-index: 99;
+margin-top: -20px;
+&-item{
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+	gap: 5px;
+	padding: 0 5px;
+	img{
+		width: 20px;
+	}
+}
+&.droped{
+	max-height: 300px;
+	border-top: none;
+	overflow-y: auto;
+	padding-top:20px;
+	&::-webkit-scrollbar{
+		width: 5px;
+	}
+	&::-webkit-scrollbar-track{
+		margin: 20px 0 0 0 ;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: white; 
+		
+	
+		border-radius: 3px;
+	  }
+}
+}
+.select_wrapper{
+display: flex;
+align-items: center;
+padding: 0 20px;
+& *{
+	font-family: $Mulish;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 120%;
+	color: $dark-gold;
+}
+label{
+	color: $gold;
+	margin: 0 15px;
+}
+}
+.select_title{
+margin: 0 10px 0 0;
+}

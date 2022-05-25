@@ -5,7 +5,7 @@ const OpenButton = ({strCategory,idMeal}) => {
 	const navigateTo = useNavigate();
 	return ( 
 		<button className="button open-btn" 
-				onClick={()=>{navigateTo(`category/${strCategory}/recipe/${idMeal}`)}}
+				onClick={()=>{navigateTo(`/category/${strCategory}/recipe/${idMeal}`)}}
 				>
 		Open recipe
 		</button>

@@ -14,19 +14,8 @@ const initialState = {
 export const ContextProvider = ({ children }) => {
 	const [value, dispatch] = useReducer(reducer, initialState);
 
-	// const [categ, setCateg] = useState([]);
-	// if (!categ.length) {
 
-	// 	ServiceAPI.getALLFoodCategiries().then(data => {
-	// 		dispatch({ type: 'SET_ALL_CATEGORIES', payload: { categories: data.categories } });
-	// 		setCateg(data.categories)
-	// 	}
-	// 	)
 
-	// 	ServiceAPI.getALLRecipes().then(data =>
-	// 		dispatch({ type: 'SET_ALL_RECIPES', payload: { recipes: data } })
-	// 	)
-	// }
 	value.addToWishList = (recipe) => {
 		dispatch({ type: 'ADD_TO_WISH_LIST', payload: recipe })
 

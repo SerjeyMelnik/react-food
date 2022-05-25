@@ -12,7 +12,7 @@
 		background: transparent;
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: 5px;
 		@include buttonsFont($gold);
 		transition: background-color 0.5s, color 0.5s;
 		animation-timing-function: ease-in-out;
@@ -28,14 +28,14 @@
 						0px 0px  20px  $gold-40;
 			
 		}
-		.liked_numb{
-			position: absolute;
-			width: 15px;
-			height: 15px;
-			font-size: 15px;
-			bottom: 7px;
-			left: 33px;
-		}
+		// .liked_numb{
+		// 	position: absolute;
+		// 	width: 15px;
+		// 	height: 15px;
+		// 	font-size: 15px;
+		// 	bottom: 7px;
+		// 	left: 33px;
+		// }
 	}
 	&.main-btn{
 		background-color: $gold;

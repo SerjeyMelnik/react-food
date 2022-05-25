@@ -1,44 +1,45 @@
-import React, { useState } from 'react';
-
-const CategoryFilter = ({meals,filteredMeals,setFilteredMeals}) => {
-	const [searchQuery,setSearchQuery] = useState('');
-	const [filtertByAlfabet,setFiltertByAlfabet] = useState(false);
-
-	const searchMeal = (e) => {
-		let query = e.target.value;
-		console.log(query);
-		setSearchQuery(query);
-		if (query === '')
-		{
-			setFilteredMeals(meals)
-		}
-		else setFilteredMeals(meals.filter(item =>
-				 item.strMeal.toLowerCase().includes(query.toLowerCase())
-			))
+import React, { useEffect, useState } from 'react';
+import CategorySearch from './CategorySearch';
+import Selector from './selector/Selector';
+import {getAllCountries} from '../utils/Country';
+import {getIngredients} from '../utils/getIngredients';
+const CategoryFilter = ({meals,filteredMeals,setFilteredMeals,ingredients}) => {
+	
+	const [area,setArea] = useState({text:'All country'});
+	const [ingredient,setIngredient] = useState({text:'All ingredients'});
+	const [querySearch,setQuerySearch] = useState('')
+	
+  	
+	const filterMeal = () => {
+		
+		const filtered = area.text !== 'All country' ? meals.filter(item => item.strArea === area.text ) : meals;
+		console.log(filtered);
+		setFilteredMeals(filtered.filter(item => item.strMeal.toLowerCase().includes(querySearch.toLowerCase())));
 	}
-	const filterMeal = (byAlfabet,searchQuery) => {
-
-	}
+	useEffect(()=>{
+		filterMeal()
+	},[area,querySearch])
 	return ( 
 		<div className="category_filter">
-			<div className="filter_item">
-				<div className="filter_search">
-					<input type="text"
-							value={searchQuery} 
-							onChange={searchMeal}
-							/>
-				</div>
+			<div className="category_filter_item">
+				<CategorySearch setQuerySearch={setQuerySearch} 
+								querySearch={querySearch} />
 			</div>
-			<div className="filter_item">
-				<div className="filter_by_alfabet">
-					<input type="checkbox" 
-							name="" 
-							id="by" 
-							/>
-					<label htmlFor="">
-
-					</label>
-				</div>
+			<div className="category_filtern_item">
+				<Selector label='sort by country' 
+						  data={getAllCountries()}
+						  defaultValue='All country'
+						  value = {area}
+						  setValue = {setArea}
+						  />
+			</div>
+			<div className="category_filtern_item">
+				<Selector label='sort by ingredient' 
+						  data={ingredients}
+						  defaultValue='All ingredients'
+						  value = {ingredient}
+						  setValue = {setIngredient}
+						  />
 			</div>
 		</div>
 	 );
