@@ -2,15 +2,20 @@ import React, { useContext, useEffect, useReducer, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ServiceAPI from '../API_SERVICE';
 import SideBar from '../components/SideBar';
+import LikeButton  from '../components/LikeButton';
 import { AppContext } from '../context';
 import { getIngredients } from '../utils/getIngredients';
+import { getCountryByName } from '../utils/Country';
+import RecipeContentSwitcher from '../components/RecipeContentSwitcher';
 
 const Foodrecipe = () => {
 	const [recipe,setRecipe] = useState({});
 	const [ingredients,setIngredients] = useState([]);
 	const {recipeID,categoryName} = useParams();
 	const {addToWishList,wishList} = useContext(AppContext)
-
+	const youtubeSrc = recipe.strYoutube ?
+						`https://www.youtube.com/embed/${recipe.strYoutube.replace('https://www.youtube.com/watch?v=','')}`
+						: null;
 	useEffect(()=>{
 		ServiceAPI.getRecipeById(recipeID).then(data => {
 			setRecipe(data.meals[0]);
@@ -18,62 +23,58 @@ const Foodrecipe = () => {
 		});
 		
 	},[recipeID])
-
-
+	
+	
 	return (
-		<div className="recipe_wrapper">
-			
-		<div className='recipe' style={{textAlign:"center"}}>
-			<img src={recipe.strMealThumb} alt="" width='500px'/>
-			<h1>{recipe.strMeal} 
-			<span onClick={()=>{addToWishList(recipe)}}>
-				<i className="material-icons like">
-				{
-							wishList.filter(meal => recipe.idMeal === meal.idMeal).length
+		<div className="recipe_wrapper">	
+		<div className='recipe' >
+			<div className="head_info_wrapper">
+				<div className="head_info_img_wrapper">
+					<img src={recipe.strMealThumb}
+						  className='head_info_img' />
+				</div>
+				<div className="head_info">
+					<h1 className="head_info_title">
+						{recipe.strMeal} 
+						{
+							getCountryByName(recipe.strArea) 
 							?
-							'favorite'
+								<img src={getCountryByName(recipe.strArea).flag}  />
 							:
-							'favorite_border'
+								null
 						}
-				</i>
-			</span>
-			</h1>
-			<p>Category: {recipe.strCategory}</p>
-			<p>Area: {recipe.strArea}</p>
-			<p>{recipe.strInstructions}</p>
-			<table>
-				<thead>
-					<tr>
-						<td>Ingredient image</td>
-						<td>Ingredient</td>
-						<td>Mesure</td>
-					</tr>
-				</thead>
-				<tbody>
-					{
-						ingredients.length ? 
-						ingredients.map(ing => 
-							{
-							 return <tr key={ing.ingredient + ing.measure}>
-								<td><img src={ing.thumbSmall} width='100px'/></td>
-								<td>{ing.ingredient}</td>
-								<td>{ing.measure}</td>
-							</tr>
-							}
-							) :
-							<tr></tr>
-					}
-				</tbody>
-			</table>
-			{
-				recipe.strYoutube ?
-				<>
-				<h3>Video recipe</h3>
-				<iframe src={`https://www.youtube.com/embed/${recipe.strYoutube.replace('https://www.youtube.com/watch?v=','')}`} frameBorder="0" allowFullScreen width='500px' height='350px'></iframe> 
-				</>
-				:
-				''
-			}
+					</h1>
+					<div className="additional_info">
+						<p className='additional_info_item'>
+							<span className="additional_info_item_title">
+								Category: 
+							</span>
+							<span className="additional_info_item_value">
+								{recipe.strCategory}
+							</span>
+						</p>
+						<p className='additional_info_item'>
+							<span className="additional_info_item_title">
+								Country: 
+							</span>
+							<span className="additional_info_item_value">
+								{recipe.strArea}
+							</span>
+							
+						</p>
+					</div>
+					<div className="head_info_buttons">
+						<LikeButton recipe={recipe}/>
+					</div>
+				</div>
+			</div>
+
+			<RecipeContentSwitcher description={recipe.strInstructions}
+									ingredients={ingredients}
+									youtubeSrc={youtubeSrc}/>
+			
+			
+			
 		</div>
 		</div> 
 	 );

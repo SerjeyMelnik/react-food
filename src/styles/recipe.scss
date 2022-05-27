@@ -1,3 +1,9 @@
+
+@import '/src/styles/colors';
+@import '/src/styles/fonts';
+@import '/src/styles/variables';
+
+
 table{
 	border-collapse: collapse;
 	margin: 20px auto;
@@ -7,9 +13,9 @@ table{
 	}
 }
 .recipe{
-	width: 80%;
+	
 	&_wrapper{	
-		display: flex;
+		padding: 100px $page-padding;
 	}
 }
 //recipe_of_the_day
@@ -132,4 +138,163 @@ table{
 			box-shadow: 0 0 10px 2px #16141b, inset 0 0 10px 5px #16141b;
 		}
 	}
+}
+
+.head_info{
+	border-radius: 10px;
+	background: $dark-blue;
+	flex-grow: 1;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+
+	&_wrapper{
+		display: flex;
+		gap: 30px;
+	}
+	&_img{
+		// transform: translateY(-190px);
+		&_wrapper{
+			border-radius: 10px;
+			//height: 350px;
+			overflow: hidden;
+		}
+		height: 350px;
+	}
+	&_title{
+		font-family: $Merriweather;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 60px;
+		line-height: 110%;
+		color: $gold;
+		margin-top: 0;
+		display: flex;
+		justify-content: space-between;
+	}
+	.additional_info{
+		display: flex;
+		gap: 30px;
+		&_item{
+			font-family: $Mulish;
+			font-style: normal;
+			font-size: 18px;
+			line-height: 120%;
+			color: $gold;
+			margin: 0;
+			&_title{
+				font-weight: 400;
+			}
+			&_value{
+				font-weight: 900;
+				padding-left: 5px;
+			}
+		}
+	}
+	&_buttons{
+		flex-grow: 1;
+		display: flex;
+		align-items: flex-end;
+	}
+}
+
+.switch{
+	margin-top: 30px;
+	&_buttons{
+		display: flex;
+		gap: 10px;
+	}
+	&_button{
+		font-family: $Mulish;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 110%;
+		text-align: center;
+		color: $gold;
+		width: 100%;
+		background: rgba($dark-blue, 0.7);
+		border-radius: 10px;
+		padding: 22px 60px;
+		cursor: pointer;
+		outline: none;
+		border: none;
+		transition: 0.3s;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			bottom: -25%;
+			left: 0;
+			background: transparent;
+		}
+		&:hover{
+			background: $dark-blue;
+		}
+		&.active{
+			background: $dark-blue;
+			color: $dark-gold;
+
+			&::after{
+				background: $dark-blue;
+			}
+		}
+	}
+	&_content{
+		background: $dark-blue;
+		padding: 60px;
+		margin-top: 10px;
+		border-radius: 10px;
+	}
+}
+
+.recipe_description{
+	list-style-type: none;
+	counter-reset: my-counter;
+	margin: 0;
+	border-left: 1px solid $gold;
+	li{
+		counter-increment: my-awesome-counter;
+		position: relative;
+		font-family: $Mulish;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 120%;
+		color: #FBFFF9;
+		padding: 15px 0;
+		&:first-child{
+			padding-top: 0;
+		}
+		&:last-child{
+			padding-bottom: 0;
+			&::before{
+				bottom: 0;
+			}
+		}
+		&::before{
+			content: counter(my-awesome-counter,upper-roman);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: $gold;
+			position: absolute;
+			left: -62px;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			border: 1px solid $gold;
+			background: $dark-blue;
+			z-index: 20;
+		}
+		
+	}
+}
+
+.recipe_video{
+	height: 600px;
+	width: 100%;
+	border-radius: 10px;
 }
