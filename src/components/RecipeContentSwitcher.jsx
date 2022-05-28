@@ -4,15 +4,15 @@ const RecipeContentSwitcher = ({description = 'dafault',ingredients,youtubeSrc})
 	//console.log(description,ingredients,youtubeSrc);
 	
 	if(description!== 'dafault'){
-		console.log(description);
+		
 	description = description.split('\r\n').filter(item => item.length !== 0 && item !== ' ');
-	console.log(description);
+	
 
 	}
 	const [currentSwitch,setCurrentSwitch] = useState('method')
 	const switcher = (e) =>{
 		const current = e.target.getAttribute("data-switch-type");
-		console.log(current);
+		
 		setCurrentSwitch(current);
 	}
 	return ( 

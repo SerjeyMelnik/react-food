@@ -7,6 +7,7 @@ import { AppContext } from '../context';
 import { getIngredients } from '../utils/getIngredients';
 import { getCountryByName } from '../utils/Country';
 import RecipeContentSwitcher from '../components/RecipeContentSwitcher';
+import VolumeButtomOnRecipePage from '../components/VolumeButtomOnRecipePage';
 
 const Foodrecipe = () => {
 	const [recipe,setRecipe] = useState({});
@@ -65,6 +66,11 @@ const Foodrecipe = () => {
 					</div>
 					<div className="head_info_buttons">
 						<LikeButton recipe={recipe}/>
+						{
+							getCountryByName(recipe.strArea) ?
+							<VolumeButtomOnRecipePage sound={getCountryByName(recipe.strArea).sound}/> :
+							null
+						}
 					</div>
 				</div>
 			</div>

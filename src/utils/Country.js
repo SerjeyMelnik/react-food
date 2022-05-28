@@ -1,3 +1,4 @@
+import { sound } from "../sounds/sounds";
 
 
 
@@ -7,11 +8,14 @@ const format = 'png';
 const countries = [
 	{
 		flag: `https://flagcdn.com/${size}/us.${format}`,
-		country: "American"
+		country: "American",
+		sound: sound.American
 	},
 	{
 		flag: `https://flagcdn.com/${size}/gb.${format}`,
-		country: "British"
+		country: "British",
+		sound: sound.British
+
 	},
 	{
 		flag: `https://flagcdn.com/${size}/ca.${format}`,
@@ -27,7 +31,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/nl.${format}`,
-		country: "Dutch"
+		country: "Dutch",
+		sound: sound.Dutch
 	},
 	{
 		flag: `https://flagcdn.com/${size}/eg.${format}`,
@@ -35,7 +40,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/fr.${format}`,
-		country: "French"
+		country: "French",
+		sound: sound.French
 	},
 	{
 		flag: `https://flagcdn.com/${size}/gr.${format}`,
@@ -43,7 +49,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/in.${format}`,
-		country: "Indian"
+		country: "Indian",
+		sound: sound.Indian
 	},
 	{
 		flag: `https://flagcdn.com/${size}/ie.${format}`,
@@ -51,7 +58,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/it.${format}`,
-		country: "Italian"
+		country: "Italian",
+		sound: sound.Italian
 	},
 	{
 		flag: `https://flagcdn.com/${size}/jm.${format}`,
@@ -59,7 +67,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/jp.${format}`,
-		country: "Japanese"
+		country: "Japanese",
+		sound: sound.Japanese
 	},
 	{
 		flag: `https://flagcdn.com/${size}/ke.${format}`,
@@ -79,7 +88,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/pl.${format}`,
-		country: "Polish"
+		country: "Polish",
+		sound: sound.Polish
 	},
 	{
 		flag: `https://flagcdn.com/${size}/pt.${format}`,
@@ -87,7 +97,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/ru.${format}`,
-		country: "Russian"
+		country: "Russian",
+		sound: sound.Unitaz
 	},
 	{
 		flag: `https://flagcdn.com/${size}/es.${format}`,
@@ -107,7 +118,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/vn.${format}`,
-		country: "Vietnamese"
+		country: "Vietnamese",
+		sound: sound.Vietnamese
 	}
 ]
 const getAllCountries = () => {
