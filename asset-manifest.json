@@ -1,18 +1,30 @@
 {
   "files": {
-    "main.css": "/react-food/static/css/main.fab1b55b.css",
-    "main.js": "/react-food/static/js/main.071f967e.js",
+    "main.css": "/react-food/static/css/main.10c4bdfd.css",
+    "main.js": "/react-food/static/js/main.35151160.js",
+    "static/js/845.e9edb8fb.chunk.js": "/react-food/static/js/845.e9edb8fb.chunk.js",
+    "static/media/British.mp3": "/react-food/static/media/British.27c56c20d88e971ff7fe.mp3",
+    "static/media/German.mp3": "/react-food/static/media/German.954375486698ee7bf36c.mp3",
+    "static/media/Indian.mp3": "/react-food/static/media/Indian.08139b36a84cbda64adb.mp3",
+    "static/media/Polish.mp3": "/react-food/static/media/Polish.9f35586a35593259d203.mp3",
+    "static/media/Italiano.mp3": "/react-food/static/media/Italiano.5c76f10b18a0415d0ce9.mp3",
+    "static/media/Japanese.mp3": "/react-food/static/media/Japanese.db8ee26498ecc206b33d.mp3",
+    "static/media/American.mp3": "/react-food/static/media/American.d033b4af39bf9da6f548.mp3",
+    "static/media/French.mp3": "/react-food/static/media/French.b5929e55c1e3f436a796.mp3",
     "static/media/baner.png": "/react-food/static/media/baner.bee1f53d8ebc2bfd8d81.png",
+    "static/media/Vietnamese.mp3": "/react-food/static/media/Vietnamese.7f7ed251f086a7617a62.mp3",
+    "static/media/zvuk-unitaza.mp3": "/react-food/static/media/zvuk-unitaza.5fe6bc48d87640bf126e.mp3",
     "static/media/slick.svg": "/react-food/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/react-food/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/react-food/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-food/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-food/index.html",
-    "main.fab1b55b.css.map": "/react-food/static/css/main.fab1b55b.css.map",
-    "main.071f967e.js.map": "/react-food/static/js/main.071f967e.js.map"
+    "main.10c4bdfd.css.map": "/react-food/static/css/main.10c4bdfd.css.map",
+    "main.35151160.js.map": "/react-food/static/js/main.35151160.js.map",
+    "845.e9edb8fb.chunk.js.map": "/react-food/static/js/845.e9edb8fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fab1b55b.css",
-    "static/js/main.071f967e.js"
+    "static/css/main.10c4bdfd.css",
+    "static/js/main.35151160.js"
   ]
 }
