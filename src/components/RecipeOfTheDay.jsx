@@ -4,8 +4,9 @@ import RecipeFullCart from './RecipeFullCart';
 
 const RecipeOfTheDay = () => {
 	const {allRecipes} = useContext(AppContext);
-	const recipeOfDay = {...allRecipes[Math.round(allRecipes.length / new Date().getDate())]};
-	
+	const currentDate = new Date().getDate() == 1 ? 2 : new Date().getDate();
+	const recipeOfDay = {...allRecipes[Math.round(allRecipes.length / currentDate )]};
+
 	return ( 
 		<div className="recipe_of_the_day" id='recipe_of_the_day'>
 			

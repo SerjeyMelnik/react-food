@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import useSound from 'use-sound';
-import Italiano from '../sounds/Italiano.mp3'
-import { italiano } from '../sounds/sounds.js';
+
 const VolumeButtomOnRecipePage = ({sound}) => {
 	const [soundVolume,setSoundVolume] = useState(0);
 	const [isPlaying,setIsPlaying] = useState(false);
@@ -28,20 +27,17 @@ const VolumeButtomOnRecipePage = ({sound}) => {
 			
 		}
 	}
-	// const stopPlay = () => {
-	// 	setIsPlaying(!isPlaying)
-	// 	stop()
-	// }
-	// const startPlay = () => {
-	// 	setIsPlaying(!isPlaying)
-	// 	play()
-	// }
-	// useEffect(()=>{
-	// 	startPlay();
-
-	// 	return stopPlay()
-	// },[])
-	return ( 
+	const stopPlay = () => {
+		setIsPlaying(!isPlaying)
+		stop()
+	}
+	const startPlay = () => {
+		setIsPlaying(!isPlaying)
+		play()
+	}
+	
+	if (sound){
+		return ( 
 			<div className="volume_button" onClick={buttonHandle}>
 			<i className='material-icons'>
 				{
@@ -53,10 +49,10 @@ const VolumeButtomOnRecipePage = ({sound}) => {
 				}
 				</i>
 		</div>
-		
-	
-		
 	 );
+	}
+	else return null;
+	
 }
  
 export default VolumeButtomOnRecipePage;

@@ -22,7 +22,6 @@ const Header = () => {
 		)
 		ServiceAPI.getALLRecipes().then(data =>
 			{	
-				
 			setAllRecipes(data)
 
 			}

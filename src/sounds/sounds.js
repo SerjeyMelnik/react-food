@@ -8,6 +8,8 @@ import indian from './Indian.mp3'
 import polish from './Polish.mp3'
 import unitaz from './zvuk-unitaza.mp3'
 import japanese from './Japanese.mp3'
+import egyptian from './Egyptian.mp3'
+import greek from './Greek.mp3'
 const sound = {
 	Italian: italiano,
 	American: american,
@@ -18,7 +20,9 @@ const sound = {
 	Indian: indian,
 	Polish: polish,
 	Unitaz: unitaz,
-	Japanese: japanese
+	Japanese: japanese,
+	Egyptian: egyptian,
+	Greek: greek
 }
 
 export { sound }

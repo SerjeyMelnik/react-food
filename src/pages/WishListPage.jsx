@@ -3,7 +3,7 @@ import RecipeFullCart from '../components/RecipeFullCart';
 import { AppContext } from '../context';
 
 const WishListPage = () => {
-	const {wishList,removeFromWishList} = useContext(AppContext);
+	const {wishList} = useContext(AppContext);
 
 	return ( <div className="wish_list_page">
 	

@@ -135,3 +135,49 @@
 .like{
 	cursor: pointer;
 }
+
+//drop down category
+
+.categories_dropdown{
+	position: relative;
+
+	&_list{
+		width: calc(150% + $page-padding);
+		height: 100vh;
+		top: calc(100% + 26px);
+		left: calc(100% + $page-padding);
+		color: white;
+		background-color: rgba($black-blue,0.8);
+		
+		position: absolute;
+		padding: 20px 30px;
+		box-sizing: border-box;
+		transition: 0.5s;
+		overflow: auto;
+		&.active{
+		left: -50%;
+		}
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			padding: 5px 0;
+		}
+		&-item{
+			font-family: $Mulish;
+			font-style: normal;
+			font-weight: 700;
+			font-size: 28px;
+			line-height: 110%;
+			text-align: center;
+			color: $gold;
+			text-decoration: none;
+			transition: 0.2s;
+			&:hover{
+				color: $dark-gold;
+			}
+		}
+	}
+}

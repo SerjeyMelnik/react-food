@@ -59,6 +59,8 @@ table{
 		line-height: 110%;
 		color: $gold;
 		margin-top: 0;
+		
+		
 		&-wrapper{
 			display: flex;
 			align-items: flex-start;
@@ -156,22 +158,28 @@ table{
 	&_img{
 		// transform: translateY(-190px);
 		&_wrapper{
-			border-radius: 10px;
-			//height: 350px;
-			overflow: hidden;
+			
+			
 		}
+		border-radius: 10px;
 		height: 350px;
 	}
 	&_title{
 		font-family: $Merriweather;
 		font-style: normal;
 		font-weight: 700;
-		font-size: 60px;
+		font-size: 50px;
 		line-height: 110%;
 		color: $gold;
 		margin-top: 0;
-		display: flex;
-		justify-content: space-between;
+		position: relative;
+		padding-right: 60px;
+		img{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 60px;
+		}
 	}
 	.additional_info{
 		display: flex;
@@ -299,4 +307,40 @@ table{
 	height: 600px;
 	width: 100%;
 	border-radius: 10px;
+}
+
+.ingredients{
+	
+	color: white;
+	margin: -60px;
+	.ingredient{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12%;
+		font-family: $Mulish;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 18px;
+		line-height: 120%;
+		color: $gold;
+		border-bottom: 1px solid $gold-40;
+		padding: 20px 60px;
+		
+		&_num{
+
+		}
+		&_img{
+
+			img{
+
+			}
+		}
+		&_name{
+			flex-grow: 1;
+		}
+		&_measure{
+
+		}
+	}
 }

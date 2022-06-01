@@ -18,7 +18,8 @@ const RecipesByCountries = () => {
 	const recipesToShow = 4;
 	const countriesSliderSettings = {
 		slidesToShow: 12,
-		infinite:false
+		infinite:false,
+		slidesToScroll: 3
 		
 	}
 	const selectCoutry = (country) => {

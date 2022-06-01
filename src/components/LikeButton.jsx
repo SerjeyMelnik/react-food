@@ -1,15 +1,25 @@
 import React, { useContext, useState } from 'react';
+import useSound from 'use-sound';
 import { AppContext } from '../context';
-
+import likeSound from '../sounds/like.wav'
+import unlikeSound from '../sounds/unlike.wav'
 const LikeButton = ({recipe,likeType}) => {
 	const {wishList,addToWishList,removeFromWishList} = useContext(AppContext);
 	const isLikedInit = wishList.filter(item => recipe.idMeal === item.idMeal).length !== 0;
-	const [isLiked,setIsLiked] = useState(isLikedInit);
+	const [isLiked,setIsLiked] = useState(wishList.filter(item => recipe.idMeal === item.idMeal).length !== 0);
+	const [likePlay] = useSound(likeSound,{volume:0.25})
+	const [unlikePlay] = useSound(unlikeSound,{volume:0.25})
 	const likeFunc = () => {
-		if (!isLiked) {
+		console.log(isLikedInit,isLiked);
+		if (!isLikedInit) {
 			addToWishList(recipe);
+			
 		}
-		else removeFromWishList(recipe.idMeal);
+		else {
+			removeFromWishList(recipe.idMeal);
+			
+		}
+		isLikedInit ? unlikePlay() : likePlay();
 
 		setIsLiked(!isLiked);
 	}

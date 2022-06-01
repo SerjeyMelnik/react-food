@@ -36,7 +36,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/eg.${format}`,
-		country: "Egyptian"
+		country: "Egyptian",
+		sound: sound.Egyptian
 	},
 	{
 		flag: `https://flagcdn.com/${size}/fr.${format}`,
@@ -45,7 +46,8 @@ const countries = [
 	},
 	{
 		flag: `https://flagcdn.com/${size}/gr.${format}`,
-		country: "Greek"
+		country: "Greek",
+		sound: sound.Greek
 	},
 	{
 		flag: `https://flagcdn.com/${size}/in.${format}`,

@@ -48,30 +48,31 @@ const RecipeContentSwitcher = ({description = 'dafault',ingredients,youtubeSrc})
 								}
 							</ol> :
 							currentSwitch === 'ingredients' ?
-							<table>
-								<thead>
-									<tr>
-										<td>Ingredient image</td>
-										<td>Ingredient</td>
-										<td>Mesure</td>
-									</tr>
-								</thead>
-								<tbody>
-									{
+							<div className="ingredients">
+								{
 										ingredients.length ? 
 										ingredients.map((ing,indx) => 
 											{
-											return <tr key={ing.ingredient + ing.measure + indx}>
-												<td><img src={ing.thumbSmall} width='100px'/></td>
-												<td>{ing.ingredient}</td>
-												<td>{ing.measure}</td>
-											</tr>
+												return <div className='ingredient' key={ing.ingredient + ing.measure + indx}>
+													<span className="ingredient_num">
+														{indx + 1}
+													</span>
+													<span className="ingredient_img">
+														<img src={ing.thumbSmall} />
+													</span>
+													<span className="ingredient_name">
+														{ing.ingredient}
+													</span>
+													<span className="ingredient_measure">
+														{ing.measure}
+													</span>
+												</div>
 											}
 											) :
 											<tr></tr>
 									}
-								</tbody>
-							</table> :
+							</div>	
+								 :
 							currentSwitch === 'video' ?
 						
 								<iframe src={youtubeSrc}
