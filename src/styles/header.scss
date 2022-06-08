@@ -11,6 +11,9 @@ h1.logo{
 		line-height: 51px;
 		color: $gold;
 		text-decoration: none;
+		@include mobile{
+			font-size: 30px;
+		}
 	}
 	
 }
@@ -20,11 +23,10 @@ header{
 	top: 0;
 	z-index: 1000;
 	width: 100%;
-	box-sizing: border-box;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20px $page-padding;
+	@include container(20px);
 	transition: 0.5s;
 	&.scrolled{
 		background-color: rgba($black-blue,0.8);
@@ -41,7 +43,10 @@ header{
 		width: 24px;
 		height: 24px;
 		gap: 6px;
-		
+		transition: 0.3s;
+		@include mobile{
+			margin: 0;
+		}
 		.line{
 			width: 24px;
 			height: 2px;
@@ -53,17 +58,25 @@ header{
 			transition: 0.5s;
 		}
 		&.active{
+			padding-left: 5px;
 			.line:first-child{
-				transform: rotate(45deg);
+				transform: rotate(45deg) ;
 			}
 			.line:nth-child(2){
 				opacity: 0;
 			}
 			.line:last-child{
-				transform: rotate(-45deg);
+				transform: rotate(-45deg) ;
 			}
 		}
 	}
 
-	
+	@include mobile{
+		.button-text{
+			display: none;
+		}
+		.button{
+			padding: 7px 8px;
+		}
+	}
 }

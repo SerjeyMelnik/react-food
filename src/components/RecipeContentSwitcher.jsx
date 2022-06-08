@@ -5,7 +5,7 @@ const RecipeContentSwitcher = ({description = 'dafault',ingredients,youtubeSrc})
 	
 	if(description!== 'dafault'){
 		
-	description = description.split('\r\n').filter(item => item.length !== 0 && item !== ' ');
+	description = description.split('\r\n').filter(item => item.length !== 0 && item !== ' ' && item.length !== 1);
 	
 
 	}
@@ -38,7 +38,7 @@ const RecipeContentSwitcher = ({description = 'dafault',ingredients,youtubeSrc})
 						{
 							currentSwitch === 'method' ?
 							
-							<ol className='recipe_description'>
+							<ol className={`recipe_description ${description.length === 1 ? 'one' : '' }`}>
 								{
 									description !== "dafault" ?
 									description.map(item => 

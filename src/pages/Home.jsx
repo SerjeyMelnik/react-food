@@ -4,6 +4,7 @@ import CategoriesList from '../components/CategoriesList';
 import HomeBaner from '../components/HomeBaner';
 import RecipeOfTheDay from '../components/RecipeOfTheDay';
 import RecipesByCountries from '../components/RecipesByCountries';
+import ScrollUP from '../components/ScrollUP';
 import { AppContext } from '../context';
 
 
@@ -20,6 +21,7 @@ const Home = () => {
 				"loading"
 			}
 			<RecipesByCountries/>
+			<ScrollUP/>
 		</div>
 	 );
 }

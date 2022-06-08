@@ -3,14 +3,19 @@
 @import '/src/styles/variables';
 
 .home_baner{
-	//width: 100%;
-	height: 580px;
-	margin: 0px calc($page-padding * -1) ;
-	background-image: url(/img/baner.png);
-	background-size: 100% ;
-	background-position-y: -30px ;
+	height: 75vh;
+	@include full-width();
+	background:url(/img/baner.png) ;
+	background-size: cover ;
+	background-position: center;
 	padding-top: 100px;
 	box-sizing: border-box;
+	@include mobile{
+		height: 50vh;
+		background: linear-gradient(to right,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(/img/baner.png) ;
+		background-size: cover ;
+		background-position: center;
+	}
 	&_title{
 		margin: 0;
 		font-family: $Merriweather;
@@ -20,15 +25,28 @@
 		line-height: 120%;
 		font-feature-settings: 'pnum' on, 'lnum' on;
 		color: #FBDFA9;
+		@include mobile{
+				font-size: 30px;
+		}
 	}
 	.content{
-		width: 520px;
-		margin-left: $page-padding;
-		height: 100%;
+		width: 50%;
+		@include tablet{
+			width: 100%;
+		}
+		
 		padding: 50px 0;
+		@include mobile{
+			width: 100%;
+			padding: 25px 0;
+		}
 	}
 	.banner_search{
 		margin-top: 60px;
+		width: 500px;
+		@include mobile{
+			width: 100%;
+		}
 		&_inner{
 			display: flex;
 			gap: 10px;
@@ -40,9 +58,14 @@
 			&:hover{
 				.button{
 					inset: 0 0 0 calc(100%  - 125px);
-					i{
-						opacity: 1;
+					@include mobile{
+						left: auto;
 					}
+					i{
+						opacity: 1;	
+					}
+					
+					
 				}
 				input{
 					&::placeholder{
@@ -87,12 +110,20 @@
 				position: absolute;
 				inset: 0 0 0 calc(100%  - 95px);
 				transition: 0.5s;
-				&:hover{
-					
-					& + input{
-						
+				@include mobile{
+					left: auto;
+					padding: 7px 20px;
+					i{
+						opacity: 1;
+						font-size: 35px;
 					}
 				}
+				&-text{
+					@include mobile{
+						display: none;
+					}
+				}
+				
 			}
 		}
 		&_result{
@@ -103,6 +134,8 @@
 			margin-top: 10px;
 			max-height: 150px;
 			overflow: auto;
+			position: relative;
+    		z-index: 100;
 			&::-webkit-scrollbar{
 				width: 5px;
 			}
@@ -173,10 +206,13 @@ h2.title{
 	line-height: 120%;
 	text-align: center;
 	color: $gold;
-
+	@include mobile{
+		font-size: 25px;
+	}
 }
 .home_page{
-	padding: 0 $page-padding;
+	
+	@include container();
 }
 //coutries
 .countries_flags{
@@ -218,6 +254,9 @@ h2.title{
 			margin: 10px 0 0 0;
 			
 			text-align: center;
+			@include mobile{
+				font-size: 10px;
+			}
 		}
 		img{
 			width: 100%;
@@ -227,8 +266,10 @@ h2.title{
 
 .recipes_by_coutries{
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(calc(25% - 30px), 1fr));
+	
+	grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
 	gap: 30px;
+	
 }
 
 .show-more{
@@ -270,4 +311,46 @@ h2.title{
 			right: -15px;
 			transform: rotate(45deg);
 		}
+}
+
+.scroll_up{
+	width: 40px;
+	height: 40px;
+	background-color: $gold;
+	position: fixed;
+	z-index: 100;
+	bottom: 60px;
+	right: 20px;
+	border-radius: 50%;
+	
+	box-shadow: 0px 0px 20px $gold-40;
+	align-items: center;
+	cursor: pointer;
+	box-sizing: border-box;
+	transition: 0.3s;
+	&:hover{
+		background: $dark-gold;
+	}
+	&::before,&::after{
+		content: '';
+		width: 19px;
+		height: 3px;
+		background: $dark-blue;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		
+		display: block;
+		border-radius: 3px;
+	}
+	&::before{
+		left: 5px;
+		transform:translateY(-50%) rotate(-45deg);
+	}
+	&::after{
+		right: 5px;
+		transform:translateY(-50%) rotate(45deg);
+	}
+
+
 }

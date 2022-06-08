@@ -18,13 +18,14 @@ const RecipeFullCart = ({idMeal}) => {
 		
 	},[])
 	const getDescription = () => {
-		const numberOfParagraphs = 3;
-		const fullDescription = recipe.strInstructions.split('\r\n');
+		const numberOfParagraphs = 2;
+		const numberCharterInParagraph = 150;
+		const fullDescription = recipe.strInstructions ? recipe.strInstructions.split('\r\n').filter(item => item.length !== 0 && item !== ' ' && item.length !== 1): [];
 		const descr = fullDescription.length <= numberOfParagraphs 
 		?
 		fullDescription.map((paragraph,indx,arr) => 
 			<p key={indx}> 
-				{paragraph}
+				{paragraph.length > numberCharterInParagraph ? paragraph.slice(0,numberCharterInParagraph) : paragraph}
 				{arr.length - 1 === indx ? '...' : null} 
 			</p>
 			) 
@@ -34,7 +35,7 @@ const RecipeFullCart = ({idMeal}) => {
 			{
 				return indx < numberOfParagraphs ? 
 						<p key={indx}>
-							{paragraph}
+							{paragraph.length > numberCharterInParagraph ? paragraph.slice(0,numberCharterInParagraph) : paragraph}
 							{indx === numberOfParagraphs - 1 ? '...' : null} 
 						</p> :
 						null
@@ -67,13 +68,11 @@ const RecipeFullCart = ({idMeal}) => {
 							
 
 							 <div className="recipe_full_cart-description">
+								 
 								 {
-									recipe.strInstructions 
-									?	
-								
-									recipe.strInstructions.slice(0,700) + '...'
-									:
-									null
+									 getDescription() ?
+									 getDescription().map((item,indx) => item) :
+									 null
 								 }
 								
 							 </div>

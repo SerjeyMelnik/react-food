@@ -19,7 +19,27 @@ const RecipesByCountries = () => {
 	const countriesSliderSettings = {
 		slidesToShow: 12,
 		infinite:false,
-		slidesToScroll: 3
+		slidesToScroll: 3,
+		responsive: [
+			{
+				breakpoint: 1000,
+				settings: {
+				  slidesToShow: 8,
+				}
+			  },
+			  {
+				breakpoint: 768,
+				settings: {
+				  slidesToShow: 5,
+				}
+			  },
+			  {
+				breakpoint: 500,
+				settings: {
+				  slidesToShow: 3,
+				}
+			  }
+		]
 		
 	}
 	const selectCoutry = (country) => {

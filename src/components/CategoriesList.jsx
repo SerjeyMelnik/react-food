@@ -5,7 +5,28 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const CategoriesList = ({catalog}) => {
 	const sliderSerrings = {
-		slidesToShow: 4
+		slidesToShow: 4,
+		
+		responsive: [
+			{
+				breakpoint: 1000,
+				settings: {
+				  slidesToShow: 3,
+				}
+			  },
+			  {
+				breakpoint: 768,
+				settings: {
+				  slidesToShow: 2,
+				}
+			  },
+			  {
+				breakpoint: 500,
+				settings: {
+				  slidesToShow: 1,
+				}
+			  }
+		]
 	}
 
 	return ( 

@@ -5,7 +5,9 @@ import { AppContext } from '../context';
 const CategoriesBurger = () => {
 	const [isOpenCateg,setIsSpenCateg] = useState(false);
 	const {allCategories} = useContext(AppContext);
-	
+	const setCategOnMob = () => {
+		setIsSpenCateg(window.innerWidth < 768 ? !isOpenCateg : isOpenCateg )
+	}
 	return ( 
 		<div className="categories_dropdown">
 			<button className={`button main-btn ${isOpenCateg ? 'active' : ''}`} 
@@ -26,7 +28,8 @@ const CategoriesBurger = () => {
 							
 								return <li key={category.idCategory}>
 									<Link to={`/category/${category.strCategory}`}
-											className='categories_dropdown_list-item'>{category.strCategory}</Link> 
+											className='categories_dropdown_list-item'
+											onClick={setCategOnMob}>{category.strCategory}</Link> 
 									</li>
 							
 						})

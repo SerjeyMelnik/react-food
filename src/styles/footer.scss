@@ -4,10 +4,23 @@
 
 footer{
 	background: #0F0D12;
-	padding: 0 $page-padding;
+	@include container();
 	font-size: 25px;
 	color: white;
 	margin-top: 50px;
+	.logo {
+		@include mobile {
+			margin: 0 0 40px 0;
+		}
+		
+		a{
+			@include mobile {
+				font-size: 40px;
+			}
+		
+		}
+	
+	}
 }
 .footer{
 	&-top{
@@ -16,6 +29,10 @@ footer{
 		justify-content: space-between;
 		border-bottom: 2px solid $gold-40;
 		padding: 50px 0;
+		@include mobile {
+			padding: 30px 0;
+			flex-direction: column;
+		}
 	}
 	&-bottom{
 		display: flex;
@@ -32,11 +49,22 @@ footer{
 			color: $gold-40;
 
 		}
+		@include mobile {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+		}
 	}
 	&-links{
 		display: flex;
 		align-items: center;
 		gap: 50px;
+		@include mobile {
+		    gap: 20px;
+			flex-direction: column;
+			align-self: flex-start;
+			align-items: flex-start;
+		}
 	}
 	&-link{
 		font-family: $Mulish;
@@ -51,4 +79,5 @@ footer{
 			color: $gold;
 		}
 	}
+	
 }

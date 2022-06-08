@@ -25,7 +25,7 @@ const CategoryFilter = ({meals,filteredMeals,setFilteredMeals,ingredients}) => {
 				<CategorySearch setQuerySearch={setQuerySearch} 
 								querySearch={querySearch} />
 			</div>
-			<div className="category_filtern_item">
+			<div className="category_filter_item">
 				<Selector label='sort by country' 
 						  data={getAllCountries()}
 						  defaultValue='All country'
@@ -33,7 +33,7 @@ const CategoryFilter = ({meals,filteredMeals,setFilteredMeals,ingredients}) => {
 						  setValue = {setArea}
 						  />
 			</div>
-			<div className="category_filtern_item">
+			<div className="category_filter_item">
 				<Selector label='sort by ingredient' 
 						  data={ingredients}
 						  defaultValue='All ingredients'

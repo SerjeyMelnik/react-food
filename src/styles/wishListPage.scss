@@ -3,7 +3,9 @@
 @import '/src/styles/fonts';
 @import '/src/styles/variables';
 .wish_list_page{
-	padding: 100px $page-padding 20px $page-padding;
+	
+	@include container(20px);
+	padding-top: 100px;
 	display: flex;
 	flex-direction: column;
 	gap: 30px;

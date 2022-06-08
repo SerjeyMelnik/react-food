@@ -6,7 +6,12 @@
 .select{
 	width: 200px;
 	position: relative;
-	
+	@include tablet {
+		width: 145px;
+	}
+	@include mobile {
+		width: 150px;
+	}
 	
 	.selected_value{
 		position: relative;
@@ -15,6 +20,7 @@
 		img{
 			margin-right: 5px;
 		}
+		
 		&.active{
 			&::after{
 		
@@ -55,6 +61,7 @@
 			right: 21px;
 		}
 	}
+	
 	ul{
 		padding-left: 0;
 	}
@@ -140,7 +147,12 @@ margin-top: -20px;
 .select_wrapper{
 display: flex;
 align-items: center;
-padding: 0 20px;
+@include mobile {
+	justify-content: space-between;
+
+}
+
+
 & *{
 	font-family: $Mulish;
 	font-style: normal;
@@ -152,6 +164,13 @@ padding: 0 20px;
 label{
 	color: $gold;
 	margin: 0 15px;
+	@include tablet{
+		margin: 0 3px;
+	}
+	@include mobile {
+		margin: 0 3px;
+
+	}
 }
 }
 .select_title{
