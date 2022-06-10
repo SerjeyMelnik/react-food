@@ -3,6 +3,7 @@ import ServiceAPI from '../API_SERVICE';
 import { getCountryByName } from '../utils/Country';
 import LikeButton from './LikeButton';
 import OpenButton from './OpenButton';
+import RecipeCartPreloader from './preloaders/RecipeCartPreloader';
 
 const RecipeCart = ({idMeal}) => {
 	const [recipe,setRecipe] = useState({});
@@ -39,7 +40,7 @@ const RecipeCart = ({idMeal}) => {
 			
 			) 
 		}
-	else return <p>Loading...</p>
+	else return <RecipeCartPreloader/>
 	
 	
 }

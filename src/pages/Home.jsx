@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import ServiceAPI from '../API_SERVICE';
 import CategoriesList from '../components/CategoriesList';
 import HomeBaner from '../components/HomeBaner';
+import RecipeCartPreloader from '../components/preloaders/RecipeCartPreloader';
+
 import RecipeOfTheDay from '../components/RecipeOfTheDay';
 import RecipesByCountries from '../components/RecipesByCountries';
 import ScrollUP from '../components/ScrollUP';
@@ -15,11 +17,8 @@ const Home = () => {
 		<div className='home_page'>
 			<HomeBaner/>
 			<CategoriesList catalog={allCategories}/>
-			{
-				allRecipes.length ?
-				<RecipeOfTheDay/> :
-				"loading"
-			}
+			
+			<RecipeOfTheDay/> 
 			<RecipesByCountries/>
 			<ScrollUP/>
 		</div>

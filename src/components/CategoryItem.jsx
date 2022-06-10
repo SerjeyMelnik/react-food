@@ -8,7 +8,8 @@ const CategoryItem = ({idCategory,strCategory,strCategoryDescription,strCategory
 			<Link to={`category/${strCategory}`} className="category_item-link">
 				<div className="category_item-img_wrapper">
 					<img src={strCategoryThumb} 
-						alt={strCategory} 
+						alt={strCategory}
+						height="140px" 
 						className="category_item-img"/>
 				</div>
 				<h3 className="category_item-name">{strCategory}</h3>

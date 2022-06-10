@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../context';
+import RecipeFullCartPreloader from './preloaders/RecipeFullCartPreloader';
 import RecipeFullCart from './RecipeFullCart';
 
 const RecipeOfTheDay = () => {
@@ -14,7 +15,7 @@ const RecipeOfTheDay = () => {
 			{
 				Object.keys(recipeOfDay).length ?
 				<RecipeFullCart {...recipeOfDay}/>  :
-				"load"
+				<RecipeFullCartPreloader/>
 			}
 		
 		</div>

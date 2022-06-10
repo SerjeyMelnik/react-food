@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
@@ -8,13 +8,15 @@ import ServiceAPI from '../API_SERVICE';
 import {  getAllCountries, getCountryByName } from '../utils/Country';
 import RecipeCart from './RecipeCart';
 import LoaderSpiner from './loader-spiner/LoaderSpiner';
+import { AppContext } from '../context';
+import RecipeCartPreloader from './preloaders/RecipeCartPreloader';
 
 const RecipesByCountries = () => {
 	const [recipes, setRecipes] = useState([]);
 	const [country,setCountry] = useState('American');
 	const [showMore,setShowMore] = useState(false);
 	const [loadShowMore,setLoadShowMore] = useState(false);
-
+	const {preloaders} = useContext(AppContext)
 	const recipesToShow = 4;
 	const countriesSliderSettings = {
 		slidesToShow: 12,
@@ -99,7 +101,9 @@ const RecipesByCountries = () => {
 								<RecipeCart key={item.idMeal} {...item}/>
 							)
 						:
-						null
+						preloaders.map(item => 
+							<RecipeCartPreloader key={item}/>
+							)
 					}
 				</div>
 				{

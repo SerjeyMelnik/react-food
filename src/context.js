@@ -8,7 +8,8 @@ export const AppContext = createContext();
 const initialState = {
 	wishList: [],
 	allCategories: [],
-	allRecipes: []
+	allRecipes: [],
+	preloaders: [1, 2, 3, 4]
 }
 
 export const ContextProvider = ({ children }) => {

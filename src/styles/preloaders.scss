@@ -1,0 +1,277 @@
+@import '/src/styles/variables';
+
+//recipe full cart preloader
+.recipe_full_cart-preloader{
+
+    height: 350px;
+    background: #2A2D35;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+	@include mobile{
+		height: auto;
+		flex-direction: column;
+		
+	}
+	&-wrapper{
+		padding: 20px;
+		border: 1px solid #FBDFA9;
+		border-radius: 10px;
+		@include mobile{
+			padding: 10px;
+		}	
+	}
+	.preloader{
+		&_img{
+			
+			height: 100%;
+			width: 350px;
+			background: rgba(white,0.1);
+			@include mobile{
+				height: 200px;
+				width: 100%;
+			}
+		
+		}
+		&_content{
+
+			padding: 30px 50px;
+			position: relative;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			@include mobile{
+				padding: 20px 10px;
+			}
+		}
+		&_title{
+			height: 50px;
+			width: 50%;
+			background-color: rgba(white,0.3);
+			margin-bottom: 50px;
+			@include mobile{
+				width: 60%;
+				margin-bottom: 30px;
+			}
+		}
+		&_flag{
+			position: absolute;
+			top: 30px;
+			right: 50px;
+			width: 60px;
+			height: 40px;
+			background-color: rgba(white,0.2);
+			@include mobile{
+				top: 20px;
+				right: 10px;
+				width: 30px;
+				height: 20px;
+			}
+		}
+		&_text{
+			width: 100%;
+			margin: 10px 0;
+			height: 30px;
+			background-color: rgba(white,0.4);
+			&:first-child{
+				width: 100%;
+			}
+			&:nth-child(2){
+				width: 95%;	
+			}
+			&:last-child{
+				width: 90%;
+			}
+		}
+		&_buttons{
+			flex-grow: 1;
+			align-items: flex-end;
+			display: flex;
+			gap: 10px;
+		}
+		&_button-open{
+			width: 130px;
+			height: 40px;
+			background-color: rgba(white,0.2);
+			border-radius: 30px;
+		}
+		&_button-like{
+			width: 40px;
+			height: 40px;
+			background-color: rgba(white,0.2);
+			border-radius: 50%;
+
+		}
+	}
+}
+
+// slider category home page preloader
+
+.slider_category_home_page_preloader{
+	position: relative;
+	.arrow{
+	
+		position: absolute;
+		top: 50%;
+		width: 0;
+		height: 0;
+		border-top: 100px solid transparent;
+		border-bottom: 100px solid transparent;
+		padding: 0;
+		transform: translate(0, -50%);
+		background: transparent;
+		color: transparent;
+		font-size: 0;
+		line-height: 0;
+		outline: none;
+		cursor: pointer;
+		@include mobile {
+			border-top: 70px solid transparent;
+			border-bottom: 70px solid transparent;
+		}
+		&-left{
+			left: 0;
+			border-right: 40px solid rgba(255, 255, 255, 0.3);
+			@include mobile {
+				border-right: 30px solid rgba(255, 255, 255, 0.3);
+			}
+		}	
+		&-right{
+			border-left: 40px solid rgba(255, 255, 255, 0.3);
+			right: 0;
+			@include mobile {
+				border-left: 30px solid rgba(255, 255, 255, 0.3);
+			}
+		}
+	}
+
+	&-items{
+		display: flex;
+		gap:20px;
+		padding: 0 60px;
+		@include mobile {
+			padding: 0 40px;
+		}
+		.item{
+			width: 25%;
+			height: 300px;
+			background-color: $dark-blue;
+			border-radius: 10px;
+			&:nth-child(1){
+				
+			}
+			&:nth-child(2){
+				@media (max-width:500px)
+				{
+					display: none;
+				}
+			}
+			&:nth-child(3){
+				@include mobile{
+					display: none ;
+				}
+			}
+			&:nth-child(4){
+				@include tablet{
+					display: none ;
+				}
+				@include mobile{
+					display: none ;
+				}
+			}
+			@include tablet{
+				width: 33%;
+			}
+			@include mobile{
+				width: 50%;
+
+			}
+			@media (max-width:500px)
+			{
+				width: 100%;
+			}
+			&-img{
+				width: 150px;
+				height: 150px;
+				margin: 20px auto 30px;
+				border-radius: 50%;
+				background-color: rgba($color: white, $alpha: 0.2);
+				@include mobile{
+					width: 120px;
+					height: 120px;
+					margin-bottom:40px ;
+				}
+			}
+			&-name{
+				width: 70%;
+				height: 35px;
+				margin: auto;
+				background-color: rgba($color: white, $alpha: 0.3);
+				margin-bottom: 15px	;
+			}
+			&-small-text{
+				width: 60%;
+				height: 15px;
+				margin: auto;
+				background-color: rgba($color: white, $alpha: 0.1);
+			}
+		}
+	}
+}
+
+//recipe cart preloader
+
+.recipe_cart_preloader{
+	overflow: hidden;
+    background: $dark-blue;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+	&_img{
+		width: 100%;
+		height: 250px;
+		background: rgba($color: white, $alpha: 0.2);
+		margin-bottom: 20px;
+		position: relative;
+	}
+	&_flag{
+		width: 30px;
+		height: 20px;
+		position: absolute;
+		border-radius: 3px;
+		top: 15px;
+		left: 15px;
+		background: rgba($color: white, $alpha: 0.4);
+		
+	}
+	&-bottom{
+		padding: 15px;
+	}
+	&-title{
+		width: 60%;
+		height: 40px;
+		margin: 0;
+		background: rgba($color: white, $alpha: 0.3);
+	}
+	&-buttons{
+		padding: 40px 0 0 0  ;
+		flex-grow: 1;
+		align-items: flex-end;
+		display: flex;
+		justify-content: space-between;
+		gap: 10px;
+	}
+	&_button-open{
+		width: 130px;
+		height: 40px;
+		background-color: rgba(white,0.2);
+		border-radius: 30px;
+	}
+	&_button-like{
+		width: 40px;
+		height: 40px;
+		background-color: rgba(white,0.2);
+		border-radius: 50%;
+
+	}
+}

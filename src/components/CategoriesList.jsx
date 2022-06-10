@@ -3,6 +3,7 @@ import CategoryItem from './CategoryItem';
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import SliderCategoryHomePagePreloader from './preloaders/SliderCategoryHomePagePreloader';
 const CategoriesList = ({catalog}) => {
 	const sliderSerrings = {
 		slidesToShow: 4,
@@ -39,7 +40,7 @@ const CategoriesList = ({catalog}) => {
 						catalog.map(item => <CategoryItem key={item.idCategory} {...item}/>)
 					}
 				</Slider> :
-			  	'not '
+			  	<SliderCategoryHomePagePreloader/>
 			}
 			
 			

@@ -10,13 +10,16 @@
 	flex-direction: column;
 	gap: 30px;
 	min-height: 50vh;
-	h1{
+	.empty-favourites{
 		font-family: $Mulish;
 		font-style: normal;
 		font-weight: 700;
 		font-size: 60px;
 		line-height: 110%;
 		color: $dark-gold;
+		@include mobile {
+			font-size: 40px;
+		}
 	}
 }
 .wish_list_item{

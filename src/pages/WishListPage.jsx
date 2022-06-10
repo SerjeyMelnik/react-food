@@ -13,7 +13,7 @@ const WishListPage = () => {
 				<RecipeFullCart key={item.idMeal} {...item}/>
 				)
 				:
-				<h1>Favorites list is empty</h1>
+				<h1 className='empty-favourites'>Favorites list is empty</h1>
 		}
 	</div> );
 }
