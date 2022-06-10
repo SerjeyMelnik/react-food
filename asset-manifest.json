@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-food/static/css/main.725f19d4.css",
-    "main.js": "/react-food/static/js/main.381a943a.js",
+    "main.css": "/react-food/static/css/main.97ea4204.css",
+    "main.js": "/react-food/static/js/main.704337d1.js",
     "static/js/845.e9edb8fb.chunk.js": "/react-food/static/js/845.e9edb8fb.chunk.js",
     "static/media/British.mp3": "/react-food/static/media/British.27c56c20d88e971ff7fe.mp3",
     "static/media/German.mp3": "/react-food/static/media/German.954375486698ee7bf36c.mp3",
@@ -23,12 +23,12 @@
     "static/media/slick.ttf": "/react-food/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/react-food/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/react-food/index.html",
-    "main.725f19d4.css.map": "/react-food/static/css/main.725f19d4.css.map",
-    "main.381a943a.js.map": "/react-food/static/js/main.381a943a.js.map",
+    "main.97ea4204.css.map": "/react-food/static/css/main.97ea4204.css.map",
+    "main.704337d1.js.map": "/react-food/static/js/main.704337d1.js.map",
     "845.e9edb8fb.chunk.js.map": "/react-food/static/js/845.e9edb8fb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.725f19d4.css",
-    "static/js/main.381a943a.js"
+    "static/css/main.97ea4204.css",
+    "static/js/main.704337d1.js"
   ]
 }
